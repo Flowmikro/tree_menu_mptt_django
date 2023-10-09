@@ -9,12 +9,12 @@ class MenuModel(MPTTModel):
     named_url = models.SlugField('URL', max_length=150, unique=True)
     parent = TreeForeignKey('self', verbose_name='Выберете поле', help_text='Выберете пункт', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
 
-    def __str__(self):
-        return self.name
-
     class MPTTMeta:
         order_insertion_by = ['name']
 
     class Meta:
         verbose_name = 'Пункт меню'
         verbose_name_plural = 'Пункты меню'
+
+    def __str__(self):
+        return self.name
