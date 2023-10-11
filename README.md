@@ -13,7 +13,7 @@ cd tree_menu_mptt_django
 Виртуальная среда
 ```
 python -m venv venv
-source env/bin/activate
+source venv/bin/activate
 ```
 Установить пакеты
 ```
